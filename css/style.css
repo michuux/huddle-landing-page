@@ -14,7 +14,7 @@
 
 body{
     background-color: var(--Violet);
-    background-image: url("/images/bg-mobile.svg");
+    background-image: url("../images/bg-mobile.svg");
     background-repeat: no-repeat;
     background-size: contain;
     color: var(--white);
@@ -160,7 +160,7 @@ body{
 
 @media screen and (min-width:930px) {
     body{
-        background-image: url('/images/bg-desktop.svg');
+        background-image: url('../images/bg-desktop.svg');
         background-size: cover;
     }
 }
