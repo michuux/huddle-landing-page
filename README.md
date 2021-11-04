@@ -18,8 +18,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Click here](https://your-solution-url.com)
-- Live Site URL: [Click here](https://your-live-site-url.com)
+- Solution URL: [Click here](https://www.frontendmentor.io/solutions/huddle-landing-page-x110b9z3K#comment-61838857af08a258e2c7ee16)
+- Live Site URL: [Click here](https://michuux.github.io/huddle-landing-page/)
 
 ### Built with
 
