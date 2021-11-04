@@ -22,66 +22,59 @@ body{
     display: grid;
 }
 
-
-/* ---------------- */
-/* -----header----- */
-/* ---------------- */
-
-#header{
-    width: 100%;
-    padding: 2.2em;
-    margin-bottom: 3em;
-    max-width: 1440px;
-    margin: 0 auto 3em auto;
-}
-
-.header__logo{
-    height: 3.25em;
-}
-
-
-/* -------------- */
-/* -----main----- */
-/* -------------- */
-
-#main{
+main{
     padding: 0 2.5em;
     text-align: center;
     max-width: 540px;
     margin:  0 auto;
 }
 
-.main__content{
+.wrapper{
     position: relative;
     max-width: 550px;
 }
 
-.main__hero{
+/* ------------------ */
+/* -----styling------ */
+/* ------------------ */
+
+header{
+    width: 100%;
+    padding: 2.2em;
+    max-width: 1440px;
+    margin: 0 auto;
+    margin-bottom: 1em;
+}
+
+.header__logo{
+    height: 3rem;
+}
+
+.hero{
     margin-bottom: 3.5em;
 }
 
-/* ----------------------- */
-/* -----main content------ */
-/* ----------------------- */
-
-.content__title{
-    font-size: 2.35em;
+.title{
+    font-size: 2.35rem;
     font-weight: 600;
     margin-bottom: .8em;
+    max-width: 18ch;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.content__paragraph{
-    font-size: 1.6em;
+.paragraph{
+    font-size: 1.3rem;
     color: #eee;
     margin-bottom: 1.35em;
 }
 
-.content__registerLink{
+.registerButton{
     text-decoration: none;
     display: block;
     margin: 0 auto;
-    width: 80%;
-    font-size: 1.3em;
+    width: 75%;
+    font-size: 1.15rem;
     padding: 1em 0;
     background-color: var(--white);
     color: var(--Violet);
@@ -92,26 +85,26 @@ body{
     text-align: center;
 }
 
-.content__registerLink:hover{
+.registerButton:hover{
     color: var(--white);
     background-color: var(--Soft-Magenta);
 }
 
 
 /* ---------------------- */
-/* -----bottom links----- */
+/* -----footer links----- */
 /* ---------------------- */
 
-.content__links{
+.footer__links{
     display: flex;
     justify-content: center;
     margin-bottom: 1.8em;
 }
 
-.links__item{
+.footer__links a{
     text-decoration: none;
     color: var(--white);
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     width: 1.95em;
     margin: 0 .35em;
     height: 1.95em;
@@ -122,7 +115,7 @@ body{
     border: 1px solid var(--white)
 }
 
-.links__item:hover{
+.footer__links a:hover{
     border-color: var(--Soft-Magenta);
     color: var(--Soft-Magenta);
 }
@@ -132,86 +125,111 @@ body{
 /* -----media----- */
 /* --------------- */
 
+@media screen and (min-width:360px) {
+    :root{
+        font-size: calc(62.5% * 1.15);
+    }
+}
+
 @media screen and (min-width:375px) {
-    body{
-        font-size: 1.1rem;
+    :root{
+        font-size: calc(62.5% * 1.2);
     }
 }
 
-@media screen and (min-width:410px){
-    body{
-        font-size: 1.15rem;
-    }
-    .content__title{
-        font-size: 2.65em;
-    }
-
-    .links__item{
-        font-size: 1.6rem;
-        margin: 0 .5em;
+@media screen and (min-width:410px) {
+    :root{
+        font-size: calc(62.5% * 1.3);
     }
 }
 
-@media screen and (min-width:712px){
-    .content__title{
-        font-size: 3.25em;
-    }
-}
+@media screen and (min-width:768px) and (orientation:landscape){
 
-@media screen and (min-width:930px) {
+    :root{
+        font-size: calc(62.5% * 1);
+    }
+
     body{
         background-image: url('../images/bg-desktop.svg');
         background-size: cover;
     }
-}
 
-@media screen and (min-width:1100px) {
-
-    body{
-        display: grid;
-        font-size: 1.1rem;
-    }
-
-    #header{
-        padding: 3em;
-        margin-bottom: 0;
-    }
-
-    .header__logo{
-        height: 4em;
-    }
-
-    #main{
+    main{
         text-align: left;
         display: grid;
         grid-template-columns: 1fr 1fr;
+        grid-template-rows: min-content 1fr;
         max-width: 1440px;
         column-gap: 4em;
         padding: 0 4em;
     }
 
-    .content__registerLink{
-        margin-left: 0;
-        width: 40%;
+    .hero{
+        grid-row: 1/2;
+        grid-column: 1/2;
     }
 
-    .content__links{
+    .wrapper{
+        grid-column: 2/3;
+        grid-row: 1/2;
+    }
+
+    header{
+        padding: 2.5em;
+        margin-bottom: 0;
+        grid-row: 1/2;
+        grid-column: 1/-1;
+    }
+
+    .title{
+        margin-left: 0;
+    }
+
+    .registerButton{
+        margin-left: 0;
+        width: 35%;
+        font-size: 1rem;
+    }
+
+    .footer__links{
         position: absolute;
         bottom: 1em;
         right: 0em;
+        margin-bottom: 0;
+        
+    }
+
+    .footer__links a{
+        font-size: 1.3rem;
     }
 }
 
-@media screen and (min-width:1280px) {
-    body{
-        font-size: 1.35em;
+@media screen and (min-width:898px) {
+    :root{
+        font-size: calc(62.5% * 1.1);
     }
+}
 
-    .content__paragraph{
-        font-size: 1.5em;
+@media screen and (min-width:1004px) {
+    :root{
+        font-size: calc(62.5% * 1.2);
     }
+}
 
-    .links__item{
-        font-size: 1.8rem;
+@media screen and (min-width:1150px) {
+    :root{
+        font-size: calc(62.5% * 1.3);
+    }
+}
+
+@media screen and (min-width:1222px) {
+    :root{
+        font-size: calc(62.5% * 1.4);
+    }
+}
+
+@media screen and (min-width:1373px) {
+    :root{
+        font-size: calc(62.5% * 1.55);
     }
 }
